@@ -1,4 +1,4 @@
-# instance_segmentation
+# Instance Segmentation
 Instance Segmentation with Detectron2 (2023)
 
 ### Motivation
