@@ -1,0 +1,150 @@
+{% extends 'project_base.html' %}
+
+<!-- https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_dark_portfolio&stacked=h -->
+
+<!-- Start header-->
+<section>
+    {% block header%}
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+        <div class="carousel-inner">
+            <!-- Slide One - Set the background image for this slide in the line below -->
+            <div class="carousel-item active">
+                <div class="carousel-caption d-none d-md-block">
+                    <img class="d-block w-100" src="{{ url_for('static', filename='')}}">
+                </div>
+            </div>
+            <!-- Slide Two - Set the background image for this slide in the line below -->
+            <div class="carousel-item">
+                <div class="carousel-caption d-none d-md-block">
+                    <img class="d-block w-100" src="{{ url_for('static', filename='')}}">
+                </div>
+            </div>
+            <!-- Slide Three - Set the background image for this slide in the line below -->
+            <div class="carousel-item">
+                <div class="carousel-caption d-none d-md-block">
+                    <img class="d-block w-100" src="{{ url_for('static', filename='')}}">
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    {% endblock %}
+</section>
+<!-- End header -->
+
+
+{% block content %}
+<!-- About/Resume -->
+<div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+    <h2 class="w3-text-light-grey">Relevant Employment</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <p id="r_e_1">April 2023 - July 2023 <em>Philadelphia Outreach, llc. (Startup Company) | Intern Squarespace Web Developer</em>
+        Responsible for developing components and designing company website in Squarespace</p><br>
+
+    <p id="r_e_2">July 2022 - July 20203 | <em>Michelin North America Inc. | Machine Operator</em>
+        Communicated with internal clients and customers to ensure a quality build of the company product. 
+       Tracked work process and building data using company software and devices. 
+       Maintained a clean environmental system by following company work methods in order to reduce environmental waste.
+       Acquired proper certifications to be authorized to utilize company devices. 
+       Utilizeed metric measuring system to collect and prepare product measurements for data entry.
+    </p>
+
+    <h3 class="w3-padding-16 w3-text-light-grey">Technical Skills</h3>
+    <p class="w3-wide">Database Design</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:85%"></div>
+    </div>
+    <p class="w3-wide">CI/CD with Github</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:65%"></div>
+    </div>
+    <p class="w3-wide">End-to-End ML/DL Projects</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:80%"></div>
+    </div>
+    <p class="w3-wide">Statistical Analysis</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:90%"></div>
+    </div>
+    <p class="w3-wide">Data Analytics</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:90%"></div>
+    </div>
+    <p class="w3-wide">Data Visualization</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:80%"></div>
+    </div>
+    <p class="w3-wide">Web Development</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:60%"></div>
+    </div>
+    <p class="w3-wide">Containerization with Docker</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:45%"></div>
+    </div>
+    <p class="w3-wide">R</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:75%"></div>
+    </div>
+    <p class="w3-wide">Python</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:85%"></div>
+    </div>
+    <p class="w3-wide">Matlab</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:70%"></div>
+    </div>
+    <p class="w3-wide">JavaScript</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:55%"></div>
+    </div>
+    <p class="w3-wide">HTML5</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:80%"></div>
+    </div>
+    <p class="w3-wide">CSS3</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:75%"></div>
+    </div>
+    <p class="w3-wide">Bootstrap</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:90%"></div>
+    </div>
+    <p class="w3-wide">Flask</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:70%"></div>
+    </div>
+    <p class="w3-wide">Jinja2</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:80%"></div>
+    </div>
+    <br>
+
+    <button class="w3-button w3-light-grey w3-padding-large w3-section">
+      <i class="fa fa-download"><a href="{{ url_for('static', filename='condensed_resume_august2023.pdf') }}"></a>Download Resume</i></a>
+    </button>
+
+    <div>
+        <h2 class="w3-text-light-grey">Education</h2>
+        <p>Data Science, M.S. | <em>Eastern University</em></p>
+        <p>Applied Mathematics, B.S. | <em>University of South Carolina</em></p>
+        <p>Associate in Science, A.S. | <em>Midlands Technical College</em></p>
+    </div>
+      
+    <div>
+      <img class="w3-round" src="{{ url_for('static', filename='20230401_112249_0000.png') }}" alt="The Brand">
+  </div>
+</div>
+{% endblock %}

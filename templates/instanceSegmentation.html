@@ -1,0 +1,170 @@
+{% extends 'project_base.html' %}
+
+
+  
+
+
+{% block content %}
+<section class="container-fluid">
+    <div>
+        <h1>Instance Segmentation with Detectron2 on Goats</h1>
+    </div>
+
+    <!-- Introduction -->
+    <p>Instance Segmentation is a low-level Deep Learning Computer Vision task that enables a system <br/>
+        to predict which pixels in an image belong to a class of instances in that image. This project was
+        designed on <a>https://colab.research.google.com/</a>> with Detectron2 <a>https://detectron2.readthedocs.io/</a>, a Facebook AI Research open source tool. <br/>
+        Detectron2, built by FAIR (Facebook AI Research) supports numerous object detection algorithms including the well known Mask R-CNN, <br/>
+        which was used to in the modeling of this project. The VGG Image Annotator (VIA) was used to perform annotations on a clean image dataset before feeding a trained dataset to the Mask R-CNN. Check it out!
+    </p>
+
+    <h3>Sample Images</h3>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="{{url_for('static', filename='Ground_truth_sample_1.png')}}" class="gallery__img" width="400"
+                            alt="instanceSegmentation" />
+                <div class="caption">
+                     <p><strong>Ground Truth Sample #1</strong></p>
+                   </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="{{url_for('static', filename='Ground_truth_sample_2.png')}}" class="gallery__img" width="400"
+                            alt="instanceSegmentation" />
+                <div class="caption">
+                     <p><strong>Ground Truth Sample #2</strong></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="{{url_for('static', filename='Ground_truth_sample_3.png')}}" class="gallery__img" width="400"
+                            alt="instanceSegmentation" />
+                <div class="caption">
+                     <p><strong>Ground Truth Sample #3</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Ends image section -->
+
+    <!-- Trained model images section-->
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="{{url_for('static', filename='Trained_model_val_1.png')}}" class="gallery__img" width="400"
+                            alt="instanceSegmentation" />
+                <div class="caption">
+                    <p><strong>Trained Model sample #1</strong></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="{{url_for('static', filename='Trained_model_val_3.png')}}" class="gallery__img" width="400"
+                            alt="instanceSegmentation" />
+                <div class="caption">
+                    <p><strong>Trained Model sample #3</strong></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="{{url_for('static', filename='Trained_model_val_5.png')}}" class="gallery__img" width="400"
+                            alt="instanceSegmentation" />
+                <div class="caption">
+                    <p><strong>Trained Model sample #5</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ends section-->
+
+    <!-- Tested model -->
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="{{url_for('static', filename='Tested_model_unseen_image_1.png')}}" class="gallery__img" width="400"
+                            alt="instanceSegmentation" />
+                <div class="caption">
+                    <p><strong>Tested Model on unseen image w/ bounding box ONLY #1</strong></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="{{url_for('static', filename='Tested_model_unseen_image_2.png')}}" class="gallery__img" width="400"
+                            alt="instanceSegmentation" />
+                <div class="caption">
+                    <p><strong>Tested Model on unseen image w/ bounding box ONLY #2</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End of section-->
+
+    <!-- Official Test with Final Parameters-->
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="{{url_for('static', filename='Official_Prediction_Retested_w_Mask.png')}}" class="gallery__img" width="400"
+                            alt="instanceSegmentation" />
+                <div class="caption">
+                    <p><strong>Official Prediction w/ Mask and Bounding Box</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--</section>-->
+    <!-- End of section-->
+
+
+    <!-- download images-->
+    <button class="w3-button w3-light-grey w3-padding-large w3-section">
+        <i class="fa fa-download"><a href="{{url_for('project_images')}}">Download Goat Images</a></i>
+    </button>
+
+    <!-- Starts form section -->
+    <!--<section>-->
+    <div class="form-container">
+        <form class="form-horizontal" action ="/predict" method="POST" enctype="multipart/form-data">
+            
+            <!-- upload file-->
+            <div class="form-group row">
+                <p>Select a goat image from the downloaded folder or a goat image of your own to upload: </p>
+                {{ form.hidden_tag() }} <!-- creates hidden field with token to protect form -->
+                {{ form.file() }} <!-- displays file field-->
+                {{ form.submit(id='submit-field') }}
+                 <!-- displays submit button-->
+                <!-- flash message of successful upload-->
+                {% for message in get_flashed_messages() %}
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                {% endfor %}
+
+            </div>
+    
+            <!-- make inference
+            <div class="form-group row">
+                <label class="control-label col-sm-2" for="">&nbsp;</label>
+                <div class="col-sm-offset-2 col-sm-4">
+                    <button type="submit" class="btn btn-primary">Make Inference</button>
+                </div>
+            </div>-->
+        </form>
+    </div>
+</section>
+    <!-- Ends form section-->
+    
+{% endblock %}
