@@ -28,7 +28,11 @@ Detectron2 Citation:
   # Data Summary
 
 The original tensorflow bee_dataset was changed since none of the images were appropriate for instance segmentation. All bee images contained one object (bee or wasp), which would have sufficed for semantic segmentation, however our goal was to predict the pixels of the image that belong to a particular instance. Also, the COCO dataset was not physically used like our goat dataset. Instead, Detectron2’s baseline algorithms were pre-trained on the COCO dataset so we removed this section.
-The dataset of choice was a custom built dataset that consisted of 57 randomly chosen goat images from Flickr.com. This dataset is not a multi-label or multi-class dataset. However, the majority of these images contain multiple objects of interest within the same class. The features of this image dataset vary by image. There are a few reasons for this:
+The dataset of choice was a custom built dataset that consisted of 57 randomly chosen goat images from Flickr.com. This dataset is not a multi-label or multi-class dataset. However, the majority of these images contain multiple objects of interest within the same class. The features of this image dataset vary by image.
+
+# Python Web Application
+
+The python web app that was deployed to NGROK is simple and not a full web app as the goal was to ensure that the app and model worked and not exactly how the app looked or how the end user experienced it. 
 Some images on Flickr.com are downloadable and others are not. This preference is set by whoever uploads the image.
 Our local machine is smaller in size compared to most industry workstations that perform instance segmentation tasks, so the pixel size matters. The bigger the pixel size the more RAM our local machine will use to store the image data. So image size was kept to a limit.
 Image size could not be too small because when annotating images, the image of interest will need to be expanded for proper annotations. Small images expanded or heavily increased in size may expose image pixelations and annotations may then become rigid
